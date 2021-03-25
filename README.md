@@ -9,11 +9,11 @@ The application presents a Springboot micro-service component. A user assigns on
 
 Clone the application first. Build it with the Maven 'mvn clean install' command-line command. And finally run it with the Springboot Maven command: 'mvn spring-boot:run'. The application, which has three different Spring-Profiles, will start default into the test (demo) profile. To change the profiles go to the application properties file and change spring.profiles.active=test into 'dev' of 'prod', to reach the other profiles through start-up.
 
-  https://github.com/artsgard/beerapplication/blob/main/src/main/resources/application.properties
+  https://github.com/artsgard/retailapplication/blob/master/src/main/resources/application.properties
 
 You will notice that each profile has its own DB and of course when using the other two profiles of dev or prod you should intall and configurate respectively a Mysql or Postgres DB. You'll find the configuration-details of user password etc. at the DBConfig at the root of the project:
 
-  https://github.com/artsgard/beerapplication/blob/main/src/main/java/com/artsgard/beerapplication/DBConfig.java
+  https://github.com/artsgard/retailapplication/blob/master/src/main/java/com/artsgard/retailapplication/DBConfig.java
 
 I case you have a Mysql DB installed at your local machine (after adjusting credentials like user pw), the application will automatically envoke a DB script and install some previous data into your local DB (a nice fact of Mysql but unfortunately Postrgres does not work like that).
 
@@ -40,7 +40,5 @@ There are three classical layers present at the application: Controller - Servic
   
   -Swagger2 Documentation
   
-  -Testing (work in progress)
-  
-  -Docker/ Compose part (work in progress)
+  -Testing
   
