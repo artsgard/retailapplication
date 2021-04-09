@@ -4,6 +4,8 @@ package com.artsgard.retailapplication.config;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.web.PagedResourcesAssembler;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import springfox.bean.validators.configuration.BeanValidatorPluginsConfiguration;
@@ -33,6 +35,7 @@ public class AppConfig implements WebMvcConfigurer {
                 //.paths(PathSelectors.regex("/beer.*"))
                 .build()
                 .apiInfo(info())
+                .ignoredParameterTypes(Pageable.class)
                 .useDefaultResponseMessages(false);
     }
 
