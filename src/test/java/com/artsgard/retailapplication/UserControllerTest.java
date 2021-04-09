@@ -26,10 +26,10 @@ import java.util.List;
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 @DirtiesContext(classMode= DirtiesContext.ClassMode.AFTER_CLASS)
 @AutoConfigureJsonTesters
-//@Sql({"/company_data.sql"})
+//@Sql({"/company_data.txt"})
 //@Transactional
 /*
-@Sql(scripts = {"/company_data.sql"},
+@Sql(scripts = {"/company_data.txt"},
         config = @SqlConfig(encoding = "utf-8", transactionMode = SqlConfig.TransactionMode.INFERRED))
 @Transactional
 

@@ -26,12 +26,12 @@ public class ProductPurchaseEntity implements Serializable {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @MapsId("productId")
-    @JoinColumn(name = "product_id", nullable = false, insertable = false, updatable = false)
+    @JoinColumn(name = "PRODUCT_ID", nullable = false, insertable = false, updatable = false)
     private ProductEntity product;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @MapsId("purchaseId")
-    @JoinColumn(name = "purchase_id", nullable = false, insertable = false, updatable = false)
+    @JoinColumn(name = "PURCHASE_ID", nullable = false, insertable = false, updatable = false)
     private PurchaseEntity purchase;
 
     @Column(name = "PRODUCT_PURCHASE_DATE", nullable = false)

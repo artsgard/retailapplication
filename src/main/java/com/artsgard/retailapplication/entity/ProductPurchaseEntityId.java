@@ -21,10 +21,10 @@ public class ProductPurchaseEntityId implements Serializable {
 
     private static final long serialVersionUID = -5998324119897948326L;
 
-    @Column(name = "purchase_id", insertable = false, updatable = false, unique = true, nullable = false)
+    @Column(name = "PURCHASE_ID", insertable = false, updatable = false, unique = true, nullable = false)
     private Long purchaseId;
 
-    @Column(name = "product_id", insertable = false, updatable = false, unique = true, nullable = false)
+    @Column(name = "PRODUCT_ID", insertable = false, updatable = false, unique = true, nullable = false)
     private Long productId;
 
 }

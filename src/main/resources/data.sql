@@ -1,4 +1,4 @@
-/*USE PRODUCT_PURCHASE_DB;*/
+
 
 INSERT INTO USER (ID, USERNAME, FIRST_NAME, LAST_NAME, EMAIL, PASSWORD, ACTIVE, REGISTER_DATE)
 VALUES (1,'wd','willem','dragstra', 'wfdragstra@gmail.com', 'geheim', 1, '2019-08-12 09:50:45');

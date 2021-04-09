@@ -19,7 +19,7 @@ public class DBConfig {
     @Bean(name = "postgresDataSource")
     public DataSource devDatabaseConnection() {
         DataSourceBuilder dataSourceBuilder = DataSourceBuilder.create();
-        dataSourceBuilder.url("jdbc:postgresql://localhost:5432/product_purchase_db");
+        dataSourceBuilder.url("jdbc:postgresql://localhost:5432/PRODUCT_PURCHASE_DB");
         dataSourceBuilder.username("postgres");
         dataSourceBuilder.password("Candita123");
         return dataSourceBuilder.build();
@@ -39,7 +39,7 @@ public class DBConfig {
     @Bean
     public DataSource prodDatabaseConnection() {
         DataSourceBuilder dataSourceBuilder = DataSourceBuilder.create();
-        dataSourceBuilder.url("jdbc:mysql://localhost:3306/product_purchase_db?createDatabaseIfNotExist=true&useUnicode=yes&characterEncoding=UTF-8&useLegacyDatetimeCode=false&serverTimezone=UTC");
+        dataSourceBuilder.url("jdbc:mysql://localhost:3306/PRODUCT_PURCHASE_DB?createDatabaseIfNotExist=true&useUnicode=yes&characterEncoding=UTF-8&useLegacyDatetimeCode=false&serverTimezone=UTC");
         dataSourceBuilder.username("root");
         dataSourceBuilder.password("Candita123");
         return dataSourceBuilder.build();
