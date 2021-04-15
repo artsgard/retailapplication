@@ -45,7 +45,7 @@ public class Utils {
             return builder.and((Predicate[])predicates.toArray(new Predicate[predicates.size()]));
         };
     }
-/*
+
     public static <T> Specification<T> preparedQueryWithDates(Date startDate, Date endDate, Example<T> example) {
         return (root, query, builder) -> {
             List<Predicate> predicates = new ArrayList();
@@ -61,5 +61,5 @@ public class Utils {
             return builder.and((Predicate[])predicates.toArray(new Predicate[predicates.size()]));
         };
     }
-*/
+
 }
