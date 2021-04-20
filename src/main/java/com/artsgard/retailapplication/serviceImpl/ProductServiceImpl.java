@@ -5,7 +5,9 @@ import com.artsgard.retailapplication.dto.CompanyDto;
 import com.artsgard.retailapplication.dto.ProductDto;
 import com.artsgard.retailapplication.dto.ProductListDto;
 import com.artsgard.retailapplication.entity.ProductEntity;
+import com.artsgard.retailapplication.entity.ProductEntity.BeerType;
 import com.artsgard.retailapplication.exception.ResourceAlreadyPresentException;
+import com.artsgard.retailapplication.exception.ResourceNotFoundException;
 import com.artsgard.retailapplication.service.ProductService;
 import org.slf4j.LoggerFactory;
 import org.springframework.data.domain.Example;
@@ -16,6 +18,7 @@ import org.springframework.util.StringUtils;
 import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.List;
+import org.apache.commons.lang3.EnumUtils;
 
 /**
  *
@@ -32,6 +35,10 @@ public class ProductServiceImpl extends DaoService implements ProductService {
         if (productRepo.findProductEntityByProductRef(dto.getProductRef()).isPresent()) {
             throw new ResourceAlreadyPresentException("This product is already present: " + dto.getProductRef());
         }
+        
+        if (!EnumUtils.isValidEnum(BeerType.class, dto.getBeerType())) {
+            throw new ResourceNotFoundException("The Beertype " + dto.getBeerType() + " is not a correct ENUM type");
+        } 
 
         if (dto.getCompany() != null && dto.getCompany().getCompanyRef() != null) {
             CompanyDto compDto = getCompanyDto(dto.getCompany().getCompanyRef());
@@ -80,7 +87,12 @@ public class ProductServiceImpl extends DaoService implements ProductService {
         }
 
         if (dto.getBeerType() != null) {
-            productDto.setBeerType(dto.getBeerType());
+            if (!EnumUtils.isValidEnum(BeerType.class, dto.getBeerType())) {
+                throw new ResourceNotFoundException("The Beertype " + dto.getBeerType() + " is not a correct ENUM type");
+            } else {
+                productDto.setBeerType(dto.getBeerType());
+            }
+            
         }
 
         if (dto.getPrice() != null) {

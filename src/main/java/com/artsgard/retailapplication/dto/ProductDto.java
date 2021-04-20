@@ -31,7 +31,9 @@ public class ProductDto implements Serializable {
 
     private String graduation;
 
-    private ProductEntity.BeerType beerType;
+    //private ProductEntity.BeerType beerType;
+    
+    private String beerType;
 
     private String nationality;
 
